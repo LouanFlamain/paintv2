@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/bulma.css" />
+    <title>Projet Canvas</title>
+  </head>
+  <body>
+    <nav
+      class="navbar has-shadow"
+      role="navigation"
+      aria-label="main navigation"
+    >
+      <div class="navbar-brand">
+        <a class="navbar-item" href="https://bulma.io">
+          <img
+            src="https://bulma.io/images/bulma-logo.png"
+            width="112"
+            height="28"
+          />
+        </a>
+
+        <a
+          role="button"
+          class="navbar-burger"
+          aria-label="menu"
+          aria-expanded="false"
+          data-target="navbarBasicExample"
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item"> Home </a>
+
+          <a class="navbar-item"> Documentation </a>
+
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link"> More </a>
+
+            <div class="navbar-dropdown">
+              <a class="navbar-item"> About </a>
+              <a class="navbar-item"> Jobs </a>
+              <a class="navbar-item"> Contact </a>
+              <hr class="navbar-divider" />
+              <a class="navbar-item"> Report an issue </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="buttons">
+              <a class="button is-primary">
+                <strong>Sign up</strong>
+              </a>
+              <a class="button is-light"> Log in </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <section class="flex">
+      <div id="left_panel" class="p-3">
+        <div class="card p-4 mt-3 mb-3 flex">
+          <p id="x_pos" class="mr-3">x = 0 px</p>
+          <p id="y_pos">y = 0 px</p>
+        </div>
+        <div>
+          <div id="btn_panel">
+            <button id="carre" class="grid1 button">carré</button>
+            <button id="rond" class="grid2 button">Rond</button>
+            <button id="triangle" class="button">Triangle</button>
+            <button id="clean" class="button">Clean</button>
+            <button class="button">dessin</button>
+            <button id="text" class="button is-danger">text</button>
+          </div>
+          <div class="card p-4 mt-3 mb-3">
+            <legend>Select :</legend>
+
+            <div>
+              <input
+                type="radio"
+                id="stroke"
+                name="champs"
+                value="stroke"
+                class="pointer"
+                checked
+              />
+              <label for="huey">Vide</label>
+            </div>
+
+            <div>
+              <input
+                class="pointer"
+                type="radio"
+                id="fill"
+                name="champs"
+                value="fill"
+              />
+              <label for="dewey">Plein</label>
+            </div>
+          </div class="card p-4 mt-3 mb-3">
+          <div class="card p-4 mt-3 mb-3">
+            <legend>Choose your color:</legend>
+
+            <div style="margin-right: 10px">
+              <input
+                class="pointer"
+                type="color"
+                id="color"
+                name="color"
+                value="#000000"
+              />
+              <label for="color">Color</label>
+            </div>
+          </div class="card p-4 mt-3 mb-3">
+          <div class="card p-4 mt-3 mb-3">
+            <legend>Taille forme (px) :</legend>
+            <input
+              class="pointer"
+              id="range_input"
+              type="range"
+              min="1"
+              max="300"
+              value="50"
+            />
+            <p id="range_text">taille : 50 px</p>
+            <div id="render"></div>
+          </div>
+          <div class="card p-4 mt-3 mb-3">
+            <legend>Taille police d'écriture</legend>
+            <input type="number" value="14" min="1" max="52" />
+          </div class="card p-4 mt-3 mb-3">
+        </div>
+      </div>
+      <canvas width="1000" height="500" id="canvas"></canvas>
+      <form id="text_form" class="none">
+        <div class="flex">
+          <input id="text_input" type="text" />
+          <button type="submit" class="button is-success"></button>
+          <button id="text_cancel" class="button is-danger"></button>
+        </div>
+      </form>
+    </section>
+    <script src="script.js"></script>
+  </body>
+</html>
